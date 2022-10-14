@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 
-export const Feedback = ({ options, choiceState }) => {
+export const Feedback = ({ options, onLeaveFeedback }) => {
   return (
     <>
       {options.map(option => {
@@ -10,7 +10,7 @@ export const Feedback = ({ options, choiceState }) => {
            <button type="button"
               name={option}
               onClick={() => {
-                choiceState(option);
+                onLeaveFeedback(option);
               }}
             >
               {option}</button>
