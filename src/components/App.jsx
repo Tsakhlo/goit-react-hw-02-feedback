@@ -6,7 +6,6 @@ import Section from 'components/Section/Section'
 
 
 export class App extends Component {
-  
   state = {
     good: 0,
     neutral: 0,
@@ -27,7 +26,7 @@ totalFeedback(){
   return this.state.good + this.state.neutral + this.state.bad
  };
 
- feedbackPercentage(){
+ goodPercentage(){
  return Math.round((this.state.good / this.totalFeedback()) * 100)
  };
 
@@ -49,8 +48,7 @@ totalFeedback(){
             neutral={this.state.neutral} 
             bad={this.state.bad} 
             total={this.totalFeedback()} 
-            positivePercentage={this.feedbackPercentage()}/>
-            
+            positivePercentage={this.goodPercentage()}/>
             :
             <Notification message="There is no feedback"/>
           }
